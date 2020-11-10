@@ -62,7 +62,7 @@ class YPromise{
         return new YPromise((resolve,reject)=>{
               let res= [],reason=[]
         for(let item of intertor){
-            
+            console.log('ddd',item.status)
             if(item.status == YPromise.FULFILLED){
                 // console.log(item.status)
                 item.then((val)=>{
@@ -105,6 +105,6 @@ let p4 = new YPromise((resolve,reject)=>{
 let p5 = new YPromise((resolve,reject)=>{
     resolve('5')
 })
- YPromise.all([p1,p2,p3,p4,p5]).then(val=>{
+ console.log(YPromise.all([p1,p2,p3,p4,p5]).then(val=>{
      console.log(val)
- }) 
+ }) )
